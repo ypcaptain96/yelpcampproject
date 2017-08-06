@@ -1,0 +1,21 @@
+.thumbnail img{
+    width: 100%;
+   
+}
+
+.thumbnail{
+    padding: 0;
+}
+
+.caption-full{
+    padding: 9px;
+}
+
+.flex{
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.delete-form{
+    display: inline;
+}
