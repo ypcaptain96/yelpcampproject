@@ -15,11 +15,11 @@ var app             = express();
 var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes       = require("./routes/index");
-
-
+    
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://Suyog:password@ds143777.mlab.com:43777/yelpcamp");
+var url = process.env.DATABASEURL || "mongodb://Suyog:password@ds143777.mlab.com:43777/yelpcamp";
+mongoose.connect(url);
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
