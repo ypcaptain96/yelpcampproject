@@ -18,8 +18,8 @@ var commentRoutes    = require("./routes/comments"),
 
 
 mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost/yelp_camp_v10");
-mongoose.connect("mongodb://Suyog:password@ds143777.mlab.com:43777/yelpcamp");
+mongoose.connect(process.env.DATABASEURL);
+// mongoose.connect("mongodb://Suyog:password@ds143777.mlab.com:43777/yelpcamp");
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
