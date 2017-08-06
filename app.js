@@ -17,7 +17,7 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes       = require("./routes/index");
     
 mongoose.Promise = global.Promise;
-var url = process.env.DATABASEURL || "mongodb://Suyog:password@ds143777.mlab.com:43777/yelpcamp";
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 mongoose.connect(url);
 
 app.set("view engine", "ejs");
