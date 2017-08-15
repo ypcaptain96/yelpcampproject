@@ -7,8 +7,7 @@
     display: inline;
 }
 
-/* Sticky footer styles
--------------------------------------------------- */
+
 html {
   position: relative;
   min-height: 100%;
@@ -17,8 +16,21 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+.pageform {
+    background: url(https://image.freepik.com/free-vector/adventure-accessories-pattern_1061-502.jpg);
+    background-size: contain;
+}
+
+.title{
+  text-align: center;
+  padding-top: 0px;
+}
 .footer {
   position: absolute;
   bottom: 0;
@@ -32,6 +44,51 @@ body {
   margin: 20px 0;
 }
 
+.formstyle{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 450px;
+  background: #fff;
+  border-radius: 5px;
+  border: 10px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container .left{
+  float: left;
+  width: 50%;
+  height: 420px;
+  background: url(https://image.freepik.com/free-vector/mountain-landscape-with-tourist-on-foreground_1441-60.jpg);
+  background-size: cover;
+  box-sizing: border-box;
+}
+
+.container .right{
+  float: right;
+  width: 50%;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.formBox{
+  width: 100%;
+  padding: 40px 40px;
+  box-sizing: border-box;
+  height: 400px;
+  background-color: #fff;
+  
+}
+
+.alert{
+    position:fixed;
+    left: 280px;
+    width: 60%;
+    z-index:9999; 
+}
+
 /* Thumbnail styles */
 .thumbnail img {
     width: 100%;
@@ -43,6 +100,16 @@ body {
 
 .thumbnail .caption-full {
     padding: 9px;
+}
+
+.hr{
+	height:2px;
+	margin:20px 0 20px 0;
+	background:rgba(0,0,0,.2);
+}
+
+.foot-lnk{
+	text-align:center;
 }
 
 /* Google Map styles */
