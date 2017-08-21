@@ -33,7 +33,7 @@
                 <div class="text-right">
                     <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
                 </div>
-                <hr>
+               <div class="hrShow"></div>
                 <% campground.comments.forEach(function(comment){ %>
                 <div class = "row">
                     <div class = "col-md-12">
@@ -53,6 +53,7 @@
                                 <button class = "btn btn-danger btn-xs">Delete</button>
                             </form>
                          <% } %>
+                         <div class="hrShow"></div>
                     </div>
                 </div>
                 <% }); %>
