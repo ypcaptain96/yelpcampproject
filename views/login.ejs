@@ -1,44 +1,46 @@
 <% include ./partials/header %>
 
-<body class="pageform">
+<body class="pageForm"> 
 
-<div class = "container">
-    <div class="row">
-        <div class = "container formstyle">
-            <div class = "left"></div>
-            <div class = "right">
-                <div class = "container formBox">
-                  <h1 class = "title">Login</h1>
-                    <form action="/login" method="post">
-                    
-                        <div class="input-group form-group">
-                          <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
-                          <input class="form-control" type="text" placeholder="username" name = "username">
-                        </div>
-                        
-                        <div class="input-group form-group">
-                          <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-                          <input class="form-control" type="password" name="password" placeholder="password">
-                        </div> 
-                        
-                        <div class="form-group">
-                            <button class="btn btn-lg btn-primary btn-block">Login</button>
-                        </div>
-                        
-                        <div class="hr"></div>
-        				<div class="foot-lnk">
-        					<p> Not registered? 
-                                <a href = "/register"> Sign Up </a>
-                            </p>
-        			    </div>
-                
-                    </form>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div id="formDiv">
+          <div class="col-md-6 imageForm">
+            <img src="https://image.freepik.com/free-vector/mountain-landscape-with-tourist-on-foreground_1441-60.jpg">
+          </div>
+
+          <div class="col-smd-6 formContent">
+            <h1 id="title">Login</h1>
+            <form action="/login" method="post">
+
+              <div class="input-group form-group">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                <input class="form-control" type="text" placeholder="username" name="username">
+              </div>
+
+              <div class="input-group form-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                <input class="form-control" type="password" name="password" placeholder="password">
+              </div>
+
+              <div class="form-group text-center">
+                <button class="btn btn-lg btn-primary">Login</button>
+              </div>
+
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <p> Not registered?
+                  <a href="/register"> Sign Up </a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="clearfix"></div>
         </div>
+      </div>
     </div>
-    
-</div>
+  </div>
     
     
 <% include ./partials/footer %>
