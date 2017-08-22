@@ -3,6 +3,7 @@ var bodyParser      = require("body-parser");
 var mongoose        = require("mongoose");
 var passport        = require("passport");
 var flash           = require("connect-flash");
+var moment          = require('moment-timezone');
 var localStrategy   = require("passport-local");
 var methodOverride  = require("method-override");
 var Campground      = require("./models/campground");

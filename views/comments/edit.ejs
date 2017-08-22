@@ -1,10 +1,14 @@
 <% include ../partials/header %>
 
 
-    <div class = "row">
-         <h1 style = "text-align: center;">Edit comment </h1>
-            <div style = "width: 30%; margin: 25px auto;">
-                <form action = "/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method = "POST">
+<body class="pageForm">
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div id="formDiv">
+          
+           <h1 style="text-align: center">Edit comment</h1>
+                  <form action = "/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method = "POST">
                     
                     <div class="input-group form-group">
                       <span class="input-group-addon"><i class="fa fa-file-text-o fa-fw" aria-hidden="true"></i></span>
@@ -15,12 +19,19 @@
                        <button class = "btn btn-lg btn-primary btn-block"> SUBMIT! </button>
                     </div>
                     
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <p> 
+                          <a href="/campgrounds"> Go to Campgrounds Page! </a>
+                        </p>
+                    </div>
+                    
                 </form>
-              <a href = "/campgrounds">Go to Campgrounds Page!</a>
-            </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
-
-
+  </div>
 
 
 <% include ../partials/footer %>

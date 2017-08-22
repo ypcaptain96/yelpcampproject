@@ -90,6 +90,11 @@ hr {
 	background:rgba(0,0,0,.1);
 }
 
+.hrComment{
+	height:1px;
+	margin:2px 0 2px 0;
+}
+
 .foot-lnk{
 	text-align:center;
 }
@@ -97,7 +102,7 @@ hr {
 #formDiv {
   margin: 30px;
   padding: 50px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.78);
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
 }
 

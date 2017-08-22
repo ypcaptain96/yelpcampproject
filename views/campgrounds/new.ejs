@@ -1,10 +1,13 @@
 <% include ../partials/header %>
 
-
-    <div class = "row">
-         <h1 style = "text-align: center;">Create a new Campground</h1>
-            <div style = "width: 30%; margin: 25px auto;">
-                <form action = "/campgrounds" method = "POST">
+<body class="pageForm">
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div id="formDiv">
+          
+           <h1 style="text-align: center">Create a new Campground</h1>
+             <form action = "/campgrounds" method = "POST">
                     <div class = "form-group">
                         <label for="name">Name</label>
                         <input class = "form-control" type = "text" name = "name" id="name" placeholder = "Campground Name">
@@ -33,10 +36,61 @@
                      <div class = "form-group">
                        <button class = "btn btn-lg btn-primary btn-block"> SUBMIT! </button>
                     </div>
+                    
+                    <div class="hr"></div>
+                    <div class="foot-lnk">
+                        <p> 
+                          <a href="/campgrounds"> Go to Campgrounds Page! </a>
+                        </p>
+                    </div>
+                    
                 </form>
-              <a href = "/campgrounds">Go to Campgrounds Page!</a>
-            </div>
+                
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
+  </div>
+
+
+<!--<body class="pageForm">-->
+
+<!--    <div class = "row">-->
+<!--         <h1 style = "text-align: center;">Create a new Campground</h1>-->
+<!--            <div style = "width: 30%; margin: 25px auto;">-->
+              <!--  <form action = "/campgrounds" method = "POST">-->
+              <!--      <div class = "form-group">-->
+              <!--          <label for="name">Name</label>-->
+              <!--          <input class = "form-control" type = "text" name = "name" id="name" placeholder = "Campground Name">-->
+              <!--      </div>-->
+                    
+              <!--      <div class = "form-group">-->
+              <!--          <label for="name">Price</label>-->
+              <!--          <input class = "form-control" type = "number" name = "price" id="price" placeholder = "Price" min = "0.01" step = "0.01" required>-->
+              <!--      </div>-->
+                    
+              <!--      <div class = "form-group">-->
+              <!--          <label for = "location">Location</label>-->
+              <!--          <input class = "form-control" type = "text" name = "location" id = "location" placeholder = "Location" >-->
+              <!--      </div>-->
+                    
+              <!--       <div class = "form-group">-->
+              <!--           <label for="name">Image URL</label>-->
+              <!--          <input class = "form-control" type = "text" name = "image" id = "image" placeholder = "Image URL">-->
+              <!--      </div>-->
+                    
+              <!--      <div class = "form-group">-->
+              <!--          <label for="name">Description</label>-->
+              <!--          <input class = "form-control" type = "text" name = "description" id = "description" placeholder = "Description">-->
+              <!--      </div>-->
+                    
+              <!--       <div class = "form-group">-->
+              <!--         <button class = "btn btn-lg btn-primary btn-block"> SUBMIT! </button>-->
+              <!--      </div>-->
+              <!--  </form>-->
+              <!--<a href = "/campgrounds">Go to Campgrounds Page!</a>-->
+<!--            </div>-->
+<!--    </div>-->
     
 
 <% include ../partials/footer %>
