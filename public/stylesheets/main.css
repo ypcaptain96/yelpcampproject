@@ -13,14 +13,43 @@ html {
   min-height: 100%;
 }
 
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    font-weight: 200;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #DDD;
+}
+
+.navbar-inverse .navbar-nav .active a:hover {
+    color: #DDD;
+}
+
 
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #e4e9ed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+.indexJumbo {
+    background-color: rgba(16, 16, 16, 0.92); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    color: white;
+    text-align: center;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2),
+				 0px 6px 8px rgba(0,0,0,0.1),
+				 0px 10px 15px rgba(0,0,0,0.1);
 }
 
 .pageForm {
@@ -82,15 +111,24 @@ body {
 
 /* Thumbnail styles */
 .thumbnail img {
-    width: 100%;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
+#indexImg {
+  height: 180px;
+}
 .thumbnail {
     padding: 0;
+    border: none;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2),
+				 0px 6px 8px rgba(0,0,0,0.1),
+				 0px 10px 15px rgba(0,0,0,0.1);
+	background-color: #FCFCFF;
 }
-
 .thumbnail .caption-full {
-    padding: 9px;
+    padding: 10px;
 }
 
 
