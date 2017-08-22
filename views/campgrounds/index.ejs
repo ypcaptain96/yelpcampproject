@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
 
-        <header class = "jumbotron">
+        <header class = "jumbotron indexJumbo">
             <div class = "container">
                <h1><span class="glyphicon glyphicon-tent fa-fw"></span>Welcome to YelpCamp</h1>
                <p>View our hand-picked campgrounds from all over the world!</p>
@@ -16,15 +16,14 @@
         <% campgrounds.forEach(function(campground){ %>
             <div class = "col-md-3 col-sm-6">
                 <div class = "thumbnail">
-                    <div class = "image">
-                        <img src = " <%= campground.image %> " >
+                     <img id="indexImg" src="<%= campground.image %>" height="240" width="420">
+    
+                    <div class="caption text-center">
+                            <h3> <%= campground.name %> </h3>
+                                <h6>Posted By: <em><strong><%=campground.author.username.capitalize()%></strong></em></h6>
+                            <br/>
+                                <p> <a class="btn btn-xs btn-info" href="/campgrounds/<%= campground._id %>">Details</a> </p>
                     </div>
-                    <div class = "caption">
-                         <h4> <strong><%= campground.name %></strong> </h4>
-                    </div>
-                    <p>
-                        <a href = "campgrounds/<%= campground._id %>" class = "btn btn-primary btn-xs">More Info!</a>
-                    </p>
                 </div>
             </div>
         <% }); %>
