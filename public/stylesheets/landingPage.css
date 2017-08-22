@@ -42,15 +42,16 @@ h1 {
   animation: imageAnimation 50s linear infinite; 
 }
 
+
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(http://i.imgur.com/1LpHeYa.jpg); 
 }
 .slideshow li:nth-child(2) { 
   background-image: url(http://i.imgur.com/SBEmFpv.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(http://i.imgur.com/9BPKxi5.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
@@ -58,7 +59,7 @@ h1 {
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(http://i.imgur.com/K3mPv14.jpg);
   animation-delay: 40s; 
 }
 
