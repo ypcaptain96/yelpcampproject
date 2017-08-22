@@ -40,6 +40,19 @@ body {
   background-size: cover;
 }
 
+.lead {
+    font-size: 2em;
+    font-weight: 400;
+    letter-spacing: -.1em;
+    color: #555;
+}
+
+hr {
+    border-color: #C0CFCF;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .indexJumbo {
     background-color: rgba(16, 16, 16, 0.92); 
     background-size: cover;
