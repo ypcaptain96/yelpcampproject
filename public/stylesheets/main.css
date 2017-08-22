@@ -71,6 +71,9 @@ hr {
 
 .imageForm img {
   width: 100%;
+  height: auto;
+  padding-top: 25%;
+  margin: auto;
 }
 
 #title{
@@ -122,9 +125,11 @@ hr {
 
 .alert{
     position:fixed;
-    left: 280px;
-    width: 60%;
     z-index:9999; 
+}
+
+.input-group-addon{
+  white-space:nowrap;
 }
 
 /* Thumbnail styles */

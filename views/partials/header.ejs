@@ -44,21 +44,29 @@
   </nav>
        
        <div class = "container">
-           <% if(error && error.length > 0){ %>
-               <div class = "alert alert-danger" role = "alert">
-                   <%= error %>
-               </div>
-           <% } %>
-           <% if(success && success.length > 0){ %>
-               <div class = "alert alert-success" role = "alert">
-                   <%= success %>
-               </div>
-           <% } %>
-            <% if(warning && warning.length > 0){ %>
-               <div class = "alert alert-warning" role = "alert">
-                   <%= warning %>
-               </div>
-           <% } %>
+           
        </div> 
+       
+      <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-5">
+                <% if(error && error.length > 0){ %>
+                   <div class = "alert alert-danger text-center" role = "alert">
+                       <%= error %>
+                   </div>
+               <% } %>
+               <% if(success && success.length > 0){ %>
+                   <div class = "alert alert-success text-center" role = "alert">
+                       <%= success %>
+                   </div>
+               <% } %>
+                <% if(warning && warning.length > 0){ %>
+                   <div class = "alert alert-warning text-center" role = "alert">
+                       <%= warning %>
+                   </div>
+               <% } %>
+            </div>
+        </div>
+     </div>
        
 <div class = "container">
