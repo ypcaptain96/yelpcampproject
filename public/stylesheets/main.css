@@ -69,6 +69,10 @@ hr {
     background: url(https://image.freepik.com/free-vector/adventure-accessories-pattern_1061-502.jpg);
 }
 
+.form-group {
+    width: 100%;
+}
+
 .imageForm img {
   width: 100%;
   height: auto;
@@ -123,14 +127,12 @@ hr {
 }
 
 
+
 .alert{
     position:fixed;
     z-index:9999; 
 }
 
-.input-group-addon{
-  white-space:nowrap;
-}
 
 /* Thumbnail styles */
 .thumbnail img {
