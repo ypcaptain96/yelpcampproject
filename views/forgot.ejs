@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+
+<body class="pageForm"> 
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="row">
+        <div id="formDiv">
+         
+          <div class="col-md-12 formContent">
+            <legend>Forgot Password</legend>
+           <form action="/forgot" method="POST">
+
+              
+              <div class="input-group form-group">
+                      <label for = "email">Email</label>
+                        <div class = "input-group addon">
+                          <span class="input-group-addon"><i class="fa fa-envelope fa-fw" aria-hidden="true"></i></span>
+                          <input class="form-control" type = "email" name = "email" autofocus>
+                        </div>
+               </div> 
+              
+              <br>
+              <div class="form-group text-center">
+                <button class="btn btn-lg btn-primary">Reset Password</button>
+              </div>
+            
+            </form>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include ./partials/footer %>

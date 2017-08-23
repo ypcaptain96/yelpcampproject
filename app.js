@@ -13,9 +13,10 @@ var seedDB          = require("./seeds");
 var app             = express();
 
 // Requiring Routes
-var commentRoutes    = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes       = require("./routes/index");
+var commentRoutes     = require("./routes/comments"),
+    campgroundRoutes  = require("./routes/campgrounds"),
+    indexRoutes       = require("./routes/index"),
+    userRoutes        = require("./routes/users");
     
 mongoose.Promise = global.Promise;
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
@@ -60,6 +61,7 @@ String.prototype.capitalize = function() {
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/users", userRoutes);
 
 
 app.listen(process.env.PORT, process.env.IP, function(){

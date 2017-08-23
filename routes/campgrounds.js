@@ -1,6 +1,7 @@
 var express    = require("express");
 var router     = express.Router();
 var Campground = require("../models/campground");
+var Comment = require("../models/comment");
 var middleware = require("../middleware");
 var geocoder   = require("geocoder");
 
@@ -105,14 +106,16 @@ router.put("/:id", function(req, res){
 
 // DESTROY - Deletes the specified campground
 router.delete("/:id", middleware.checkCampgroundOwnership, function(req, res){
-   Campground.findByIdAndRemove(req.params.id, function(err){
-      if(err){
-          res.redirect("/campgrounds");
-      } else{
-          req.flash("warning", "You deleted a campground");
-          res.redirect("/campgrounds");
+   Campground.findByIdAndRemove(req.params.id, function(err, campground) {
+    Comment.remove({
+      _id: {
+        $in: campground.comments
       }
-   }); 
+    }, function(err, comments) {
+      req.flash('error', campground.name + ' deleted!');
+      res.redirect('/campgrounds');
+    })
+  });
 });
 
 module.exports = router;

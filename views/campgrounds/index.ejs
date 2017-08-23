@@ -24,7 +24,7 @@
     
                     <div class="caption text-center">
                             <h3> <%= campground.name %> </h3>
-                                <h6>Posted By: <em><strong><%=campground.author.username.capitalize()%></strong></em></h6>
+                                <h6>Posted By: <a href = "/users/<%= campground.author.id %>"><em><strong><%=campground.author.username.capitalize()%></strong></em></a></h6>
                             <br/>
                                 <p> <a class="btn btn-xs btn-info" href="/campgrounds/<%= campground._id %>">Details</a> </p>
                     </div>
