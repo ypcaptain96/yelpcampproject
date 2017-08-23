@@ -4,7 +4,7 @@
         <div class = "col-md-4">
             <h1><%= user.firstName %></h1>
             <div class="thumbnail">
-                <img src = "<%= user.avatar %>" alt = "User Profile Image" height="200" width="200">
+                <img src = "<%= user.avatar %>" onerror="this.src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiglmG2ZNB7_gt3x_-Yeatd76u65ifDwFSAgPjxMe1ljq9GkOJkTSWPA'" alt = "No Avatar" height="200" width="200">
                 <div class="caption">
                     <a href = "mailto:<%= user.email %>"><%= user.email %></a>
                 </div>
@@ -30,7 +30,7 @@
           <h3><%= user.username.capitalize() %>'s Campgrounds: </h3>
           <div class = "hrEdit"></div>
             <% if(campgrounds.length < 1) { %>
-                  <p class="lead">No campgrounds submitted yet...</p> 
+                  <h4>No campgrounds submitted yet...</h4> 
              <% } else { %>
                   <% campgrounds.forEach( campground => { %>
                        <h4><a href="../campgrounds/<%= campground.id %>"><%= campground.name %></a></h4>
