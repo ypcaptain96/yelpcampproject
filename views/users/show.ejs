@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+    <div class = "row">
+        <div class = "col-md-4">
+            <h1><%= user.firstName %></h1>
+            <div class="thumbnail">
+                <img src = "<%= user.avatar %>" alt = "User Profile Image" height="200" width="200">
+                <div class="caption">
+                    <a href = "mailto:<%= user.email %>"><%= user.email %></a>
+                </div>
+            </div>
+    
+           <blockquote class="blockquote">
+                     <p class="mb-0"><%= user.bio %></p>
+            </blockquote>
+        <br>
+            
+        <% if(currentUser && user._id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+            <div class = "text-center">
+                 <a class = " btn btn-lg btn-warning" 
+                             href = "/users/<%= user._id %>/edit">
+            Edit Profile </a>
+            </div>
+        <% } %>
+           
+            
+        </div>
+        
+        <div class = "col-md-8">
+          <h3><%= user.username.capitalize() %>'s Campgrounds: </h3>
+          <div class = "hrEdit"></div>
+            <% if(campgrounds.length < 1) { %>
+                  <p class="lead">No campgrounds submitted yet...</p> 
+             <% } else { %>
+                  <% campgrounds.forEach( campground => { %>
+                       <h4><a href="../campgrounds/<%= campground.id %>"><%= campground.name %></a></h4>
+                       <div class = "thumbnail" style = "max-height:240px; max-width:420px;"><img src  = "<%= campground.image %>"></div>
+                       <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
+                       <div class = "pull-right">
+                            <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit"> Edit </a> 
+                            <form class = "delete-form" action = "/campgrounds/<%= campground._id %>?_method=DELETE" method = "POST">
+                                <button class = "btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    <% } %>
+                        <div class = "hrPost"></div>
+                 <% });%>
+            <% } %>
+        </div>
+    </div>
+        
+<% include ../partials/footer %>
