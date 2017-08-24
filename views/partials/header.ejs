@@ -36,7 +36,7 @@
                     <li class="<%= typeof page !== 'undefined' && page === 'register'?'active' : '' %>"><a href="/register">
                         <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
                 <% } else { %>
-                    <li><a href="/users/<%= currentUser.id %>"><span class="glyphicon glyphicon-user fa-fw"></span><strong><%= currentUser.username.capitalize() %></strong></a></li>
+                    <li class="<%= typeof page !== 'undefined' && page === 'user'?'active' : '' %>"><a href="/users/<%= currentUser.id %>"><span class="glyphicon glyphicon-user fa-fw"></span><strong><%= currentUser.username.capitalize() %></strong></a></li>
                     <li><a href="/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</a></li>
                 <% } %>
             </ul>

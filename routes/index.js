@@ -3,6 +3,7 @@ var router   = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var Campground = require("../models/campground");
+var middleware = require("../middleware");
 var async = require("async");
 var nodemailer = require("nodemailer");
 var crypto = require("crypto");
@@ -10,38 +11,6 @@ var crypto = require("crypto");
 // HOME PAGE
 router.get("/", function(req, res){
     res.render("landingPage");
-});
-
-// CONTACT US PAGE
-router.get("/contact", function(req, res){
-    res.render("contact");
-});
-
-
-router.post("/contact", function(req, res) {
-   
-    var api_key = process.env.APIKEY;
-    var domain = process.env.DOMAIN;
-    var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
-     
-    var data = {
-      from: 'Mailgun YelpCamp <postmaster@sandboxe3f5266b3430461b81137814b3e43d2c.mailgun.org>',
-      to: process.env.GMAILADMIN,
-      subject: req.body.userName + " - Sent you a message via YelpCamp",
-      html: "<b style='color:blue'> Message: </b>" + req.body.msg
-    };
-     
-    mailgun.messages().send(data, function (error, body) {
-      console.log(body);
-      if(!error){
-        req.flash("success", "Message sent!");
-        res.redirect("/campgrounds");}
-      else{
-        req.flash("error", "Message not sent!");
-        res.redirect("/campgrounds");
-      }
-    });
-    
 });
 
 
@@ -221,6 +190,48 @@ router.post('/reset/:token', function(req, res) {
     res.redirect('/campgrounds');
   });
 });
+
+
+// CONTACT US PAGE
+router.get("/contact",  middleware.isLoggedIn, function(req, res){
+  User.findById(req.params.id, function(err, foundUser)
+     { if(err)
+        {
+          req.flash("error", err.message);
+          res.redirect("back");
+        } else {
+        res.render("contact", {user: foundUser});
+        }
+     });
+});
+
+
+router.post("/contact", function(req, res) {
+   
+    var api_key = process.env.APIKEY;
+    var domain = process.env.DOMAIN;
+    var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+     
+    var data = {
+      from: 'Mailgun YelpCamp <postmaster@sandboxe3f5266b3430461b81137814b3e43d2c.mailgun.org>',
+      to: process.env.GMAILADMIN,
+      subject: req.body.userName + " - Sent you a message via YelpCamp",
+      html: "<b style='color:blue'> Message: </b>" + req.body.msg
+    };
+     
+    mailgun.messages().send(data, function (error, body) {
+      console.log(body);
+      if(!error){
+        req.flash("success", "Message sent!");
+        res.redirect("/campgrounds");}
+      else{
+        req.flash("error", "Message not sent!");
+        res.redirect("/campgrounds");
+      }
+    });
+    
+});
+
 
 
 module.exports = router;

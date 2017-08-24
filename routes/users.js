@@ -3,6 +3,7 @@ var router   = express.Router();
 var passport = require("passport");
 var User = require("../models/user");
 var Campground = require("../models/campground");
+var middleware = require("../middleware");
 
 
 // USER PROFILES
@@ -17,7 +18,7 @@ router.get("/:id", function(req, res) {
        {req.flash("error", "Something went wrong");
         res.redirect("/");   
        }
-       res.render("users/show", {user: foundUser, campgrounds: campgrounds});
+       res.render("users/show", {user: foundUser, campgrounds: campgrounds, page: 'user'});
        });
    });
 });
@@ -28,7 +29,7 @@ router.get("/:id/edit", function(req, res) {
         {
           res.redirect("back");
         } else {
-        res.render("users/edit", {user: foundUser});
+        res.render("users/edit", {user: foundUser, page: 'user'});
         }
      });
 });
@@ -40,9 +41,10 @@ router.put("/:id", function(req, res){
          res.redirect("back");
      } else{
          req.flash("success","Profile Updated!");
-         res.redirect("/users/" + user._id);
+         res.redirect("/users/" + user._id, {page: 'user'});
      }
   });
 });
+
 
 module.exports = router;
