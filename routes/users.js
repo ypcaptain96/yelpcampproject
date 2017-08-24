@@ -41,7 +41,7 @@ router.put("/:id", function(req, res){
          res.redirect("back");
      } else{
          req.flash("success","Profile Updated!");
-         res.redirect("/users/" + user._id, {page: 'user'});
+         res.redirect("/users/" + user._id);
      }
   });
 });
