@@ -21,6 +21,7 @@
     "express": "^4.15.3",
     "express-session": "^1.15.4",
     "geocoder": "^0.2.3",
+    "mailgun-js": "^0.13.1",
     "method-override": "^2.3.9",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",

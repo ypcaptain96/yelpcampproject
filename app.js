@@ -23,6 +23,7 @@ var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
 var pwd = process.env.GMAILPW;
 mongoose.connect(url);
 
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));

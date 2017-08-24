@@ -57,12 +57,14 @@
               </div>
               
               <div class="form-group">
-                  <label for="adminCode">Admin Code</label>
+                  <label for="adminCode">Admin Code*</label>
                   <div class="input-group">
                     <div class="input-group addon">
                       <span class="input-group-addon"><i class="fa fa-exclamation fa-fw"></i></span>
-                      <input class="form-control" type="password" placeholder="admin code" name="adminCode">
-                    </div>
+                      <input class="form-control" type="password" placeholder="admin code" name="adminCode" aria-labelledby="expLabel expDesc">
+                    </div> 
+                       <span id="expDesc" tabindex="-1" style = "color:#333; font-size:10px; font-weight:600;">(*Can be left blank)</span>
+                    
                   </div>
               </div>
 

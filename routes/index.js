@@ -12,6 +12,38 @@ router.get("/", function(req, res){
     res.render("landingPage");
 });
 
+// CONTACT US PAGE
+router.get("/contact", function(req, res){
+    res.render("contact");
+});
+
+
+router.post("/contact", function(req, res) {
+   
+    var api_key = process.env.APIKEY;
+    var domain = process.env.DOMAIN;
+    var mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+     
+    var data = {
+      from: 'Mailgun YelpCamp <postmaster@sandboxe3f5266b3430461b81137814b3e43d2c.mailgun.org>',
+      to: process.env.GMAILADMIN,
+      subject: req.body.userName + " - Sent you a message via YelpCamp",
+      html: "<b style='color:blue'> Message: </b>" + req.body.msg
+    };
+     
+    mailgun.messages().send(data, function (error, body) {
+      console.log(body);
+      if(!error){
+        req.flash("success", "Message sent!");
+        res.redirect("/campgrounds");}
+      else{
+        req.flash("error", "Message not sent!");
+        res.redirect("/campgrounds");
+      }
+    });
+    
+});
+
 
 // AUTH ROUTES
 
