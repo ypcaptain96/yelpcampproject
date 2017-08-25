@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <% if(!currentUser){ %>
                     <li class="<%= typeof page !== 'undefined' && page === 'login'?'active' : '' %>"><a href="/login">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a></li>
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a></li>
                     <li class="<%= typeof page !== 'undefined' && page === 'register'?'active' : '' %>"><a href="/register">
                         <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
                 <% } else { %>
