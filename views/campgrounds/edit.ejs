@@ -7,7 +7,7 @@
         <div id="formDiv">
           
            <h1 style="text-align: center">Edit <strong><%= campground.name %></strong></h1>
-                  <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
+                  <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" autocomplete="off">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input class="form-control" type="text" name="name" id="name" value="<%= campground.name %>">

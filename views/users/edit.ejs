@@ -8,7 +8,7 @@
           
            <h1>Public Profile</h1>
            <div class = "hrEdit"></div>
-                  <form action="/users/<%=user.id%>?_method=PUT" method="POST">
+                  <form action="/users/<%=user.id%>?_method=PUT" method="POST" autocomplete="off">
                 <div class="form-group">
                     <label for="firstName">Name</label>
                     <input class="form-control" type="text" name="firstName" id="name" value="<%= user.firstName %>">
