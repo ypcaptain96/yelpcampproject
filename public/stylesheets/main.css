@@ -169,6 +169,11 @@ hr {
   border-top-right-radius: 4px;
 }
 
+#indexImg {
+  height: 180px;
+}
+
+
 
 .thumbnail {
     padding: 0;
