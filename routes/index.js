@@ -21,6 +21,7 @@ router.get("/register", function(req, res) {
    res.render("register", {page: 'register'}); 
 });
 
+
 // Handle sign up logic
 router.post("/register", function(req, res) {
     var newUser = new User
@@ -79,6 +80,7 @@ router.get('/forgot', function(req, res) {
   res.render('forgot');
 });
 
+
 router.post('/forgot', function(req, res, next) {
   async.waterfall([
     function(done) {
@@ -131,6 +133,10 @@ router.post('/forgot', function(req, res, next) {
   });
 });
 
+
+// RESET PASSWORD
+
+// GET ROUTE
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
@@ -141,6 +147,8 @@ router.get('/reset/:token', function(req, res) {
   });
 });
 
+
+// POST ROUTE
 router.post('/reset/:token', function(req, res) {
   async.waterfall([
     function(done) {
@@ -192,7 +200,7 @@ router.post('/reset/:token', function(req, res) {
 });
 
 
-// CONTACT US PAGE
+// CONTACT ME PAGE
 router.get("/contact",  middleware.isLoggedIn, function(req, res){
   User.findById(req.params.id, function(err, foundUser)
      { if(err)
