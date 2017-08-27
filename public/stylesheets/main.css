@@ -18,11 +18,11 @@ a{
 }
 
 .stylish-input-group .input-group-addon{
-	background-color: #080808 !important; 
+	background-color: rgba(16, 16, 16, 0.4) !important; 
 }
 .stylish-input-group .form-control{
 	box-shadow:0 0 0; 
-	background-color: #080808;
+	background-color: rgba(16, 16, 16, 0.4);
 	border-color:#ccc;
 }
 .stylish-input-group button{
