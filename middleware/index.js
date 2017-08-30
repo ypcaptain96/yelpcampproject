@@ -12,6 +12,7 @@ middlewareObj.isLoggedIn = function(req, res, next){
         res.redirect("/login");
 };
 
+
 middlewareObj.checkCampgroundOwnership = function(req, res, next)
 {
     if(req.isAuthenticated())

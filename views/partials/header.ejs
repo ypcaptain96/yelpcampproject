@@ -61,19 +61,22 @@
        
       <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-md-offset-5">
+            <div class="col-md-4 col-md-offset-5">
                 <% if(error && error.length > 0){ %>
-                   <div class = "alert alert-danger text-center" role = "alert">
-                       <%= error %>
+                   <div class = "alert alert-danger alert-dismissable text-center fade in" role = "alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <%= error %>
                    </div>
                <% } %>
                <% if(success && success.length > 0){ %>
-                   <div class = "alert alert-success text-center" role = "alert">
+                   <div class = "alert alert-success alert-dismissable text-center fade in" role = "alert">
+                       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                        <%= success %>
                    </div>
                <% } %>
                 <% if(warning && warning.length > 0){ %>
-                   <div class = "alert alert-warning text-center" role = "alert">
+                   <div class = "alert alert-warning alert-dismissable text-center fade in" role = "alert">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                        <%= warning %>
                    </div>
                <% } %>

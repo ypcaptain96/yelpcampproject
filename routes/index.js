@@ -31,7 +31,7 @@ router.post("/register", function(req, res) {
             avatar:    req.body.avatar,
             bio:       req.body.bio
         });
-    if(req.body.adminCode === 'magic123'){
+    if(req.body.adminCode === process.env.ADMINCODE){
         newUser.isAdmin = true;
     }
      User.register(newUser, req.body.password, function(err, user){
@@ -56,16 +56,16 @@ router.get("/login", function(req, res) {
 
 // Handle login logic
 //  == app.post("/login", middleware, callback) ==
-router.post("/login", passport.authenticate("local", 
-{
-    successRedirect: "/campgrounds",
-    failureRedirect: "/login",
-    failureFlash: true,
-    successFlash: "Welcome back!" 
-}),
-function(req, res) {
-});
 
+router.post("/login", function (req, res, next) {
+    passport.authenticate("local",
+        {
+            successRedirect: "/campgrounds",
+            failureRedirect: "/login",
+            successFlash: "Welcome back, " + req.body.username + "!",
+            failureFlash: "Login failed, invalid credentials."
+        })(req, res);
+});
 
 // Logout Logic Route
 router.get("/logout", function(req, res) {
@@ -237,7 +237,6 @@ router.post("/contact", function(req, res) {
         res.redirect("/campgrounds");
       }
     });
-    
 });
 
 
