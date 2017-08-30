@@ -223,7 +223,7 @@ router.post("/contact", function(req, res) {
     var data = {
       from: 'Mailgun YelpCamp <postmaster@sandboxe3f5266b3430461b81137814b3e43d2c.mailgun.org>',
       to: process.env.GMAILADMIN,
-      subject: req.body.userName + " - Sent you a message via YelpCamp",
+      subject: req.body.username + " - Sent you a message via YelpCamp",
       html: "<b style='color:blue'> Message: </b>" + req.body.msg
     };
      
