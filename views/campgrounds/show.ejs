@@ -31,26 +31,29 @@
                 </div>
             </div>
             <div class="well">
-               <form action = "/campgrounds/<%= campground._id %>/comments" method="POST">
-                <div class="row">
-                    <div class="col-lg-10 col-md-10">
-                        <div class="form-group input-group bg-light">
-                            <div class = "input-group addon">
-                                  <span class="input-group-addon"><i class="fa fa-comments fa-fw" aria-hidden="true"></i></span>
-                                  <input class="form-control" type = "text" name = "comment[text]" placeholder = "Enter Your Comment Here">
-                            </div>
-                        </div> 
-                    </div>  
+              <!-- <form action = "/campgrounds/<%= campground._id %>/comments" method="POST">-->
+              <!--  <div class="row">-->
+              <!--      <div class="col-lg-10 col-md-10">-->
+              <!--          <div class="form-group input-group bg-light">-->
+              <!--              <div class = "input-group addon">-->
+              <!--                    <span class="input-group-addon"><i class="fa fa-comments fa-fw" aria-hidden="true"></i></span>-->
+              <!--                    <input class="form-control" type = "text" name = "comment[text]" placeholder = "Enter Your Comment Here">-->
+              <!--              </div>-->
+              <!--          </div> -->
+              <!--      </div>  -->
                         
-                    <div class="col-lg-2 col-md-2">
-                        <div class="text-right">
-                            <div class="form-group">
-                                <button id="comment-submit" class="btn btn-large btn-primary btn-block"> Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </form>
+              <!--      <div class="col-lg-2 col-md-2">-->
+              <!--          <div class="text-right">-->
+              <!--              <div class="form-group">-->
+              <!--                  <button id="comment-submit" class="btn btn-large btn-primary btn-block"> Submit</button>-->
+              <!--              </div>-->
+              <!--          </div>-->
+              <!--      </div>-->
+              <!--  </div>-->
+              <!--</form>-->
+                  <div class="text-right">
+                    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add New Comment</a>
+                  </div>
               
                <div class = "hrShow"></div>
                
