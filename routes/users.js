@@ -9,25 +9,27 @@ var middleware = require("../middleware");
 // USER PROFILES
 router.get("/:id", function(req, res) {
    User.findById(req.params.id, function(err, foundUser){
-       if(err)
-       {req.flash("error", "Something went wrong");
-        res.redirect("/");   
+       if(err || !foundUser)
+       { 
+           req.flash("error", "Specificed User not found!");
+           return res.redirect("/campgrounds");   
        }
        Campground.find().where("author.id").equals(foundUser._id).exec(function(err, campgrounds){
            if(err)
        {req.flash("error", "Something went wrong");
-        res.redirect("/");   
+        res.redirect("back");   
        }
        res.render("users/show", {user: foundUser, campgrounds: campgrounds, page: 'user'});
        });
    });
 });
 
-router.get("/:id/edit", function(req, res) {
+router.get("/:id/edit", middleware.checkUserOwnership, function(req, res) {
      User.findById(req.params.id, function(err, foundUser)
-     { if(err)
+     { if(err || !foundUser)
         {
-          res.redirect("back");
+           req.flash("error", "Specificed User not found!"); 
+           res.redirect("back");
         } else {
         res.render("users/edit", {user: foundUser, page: 'user'});
         }
