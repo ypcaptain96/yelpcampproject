@@ -55,16 +55,15 @@ app.use(function(req, res, next){
    next();
 });
 
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-};
-
-
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 app.use("/users", userRoutes);
 
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+};
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp server has started!"); 

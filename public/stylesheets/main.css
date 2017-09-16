@@ -46,6 +46,40 @@ a{
     color: #DDD;
 }
 
+ul.dropdown-menu {	/* dropdown menu when logged in*/
+    background-color: #aaa;
+}
+.navbar-collapse.in {	/*preventing unwanted scrollbars in collapsed dropdown menu*/
+	overflow-y: visible;
+}
+.navbar-login{
+    min-width: 250px;
+    padding: 10px;
+    padding-bottom: 0px;
+    color:black;
+    background-color: #e4e9ed;
+}
+.navbar-login-session{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+   
+.dropdown-menu>li>a{
+    display: block;
+    clear: both;
+    font-weight: 400;
+    padding: 10px!important;
+    line-height: 1.42857143;
+    color: black!important;
+    background-color:#e4e9ed!important;
+    white-space: nowrap;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+    text-decoration: none;
+    color: white!important;
+    background: #283048!important; 
+}
 
 body {
   /* Margin bottom by footer height */
@@ -160,7 +194,6 @@ hr {
 }
 
 
-
 .container .text-muted {
   margin: 20px 0;
 }
@@ -174,6 +207,17 @@ hr {
     z-index:9999; 
 }
 
+.btn-profile {
+    color: white;
+    background-color: #222125;
+    border-color: gray; /*set the color you want here*/
+}
+
+.btn-profile:hover, .btn-profile:focus, .btn-profile:active, .btn-profile.active ,.btn-profile:active:focus , .open>.dropdown-toggle.btn-profile {
+    color: white;
+    background-color: #4e4e4e;
+    border-color: gray;
+}
 
 /* Thumbnail styles */
 .thumbnail img {
@@ -184,7 +228,6 @@ hr {
 #indexImg {
   height: 180px;
 }
-
 
 
 .thumbnail {

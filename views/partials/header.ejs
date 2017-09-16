@@ -30,20 +30,11 @@
               <li class="<%= typeof page !== 'undefined' && page === 'campgrounds'?'active' : '' %>"><a href="/campgrounds"><span class="glyphicon glyphicon-tent fa-fw"></span>Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <% if(!currentUser){ %>
-                    <li class="<%= typeof page !== 'undefined' && page === 'login'?'active' : '' %>"><a href="/login">
-                        <i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a></li>
-                    <li class="<%= typeof page !== 'undefined' && page === 'register'?'active' : '' %>"><a href="/register">
-                        <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
-                <% } else { %>
-                    <li class="<%= typeof page !== 'undefined' && page === 'user'?'active' : '' %>"><a href="/users/<%= currentUser.id %>"><span class="glyphicon glyphicon-user fa-fw"></span><strong><%= currentUser.username.capitalize() %></strong></a></li>
-                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</a></li>
-                <% } %>
-                    <li role="separator" class="divider">
+                <li role="separator" class="divider">
                        <form action = "/campgrounds" method = "GET" class="navbar-form" role="search" autocomplete = "off">
                           <div> 
                                <div class = "input-group stylish-input-group">
-                                   <input type = "text" name = "search" placeholder = "Search YelpCamp" class = "form-control" style = "color:white;">
+                                   <input type = "text" name = "search" placeholder = "Search YelpCamp" class = "form-control">
                                    <span class="input-group-addon">
                                         <button type="submit" style = "color:white;">
                                             <span class="glyphicon glyphicon-search"></span>
@@ -52,7 +43,51 @@
                                </div>
                            </div>
                        </form>
-                    </li>
+                </li>
+                
+                <% if(!currentUser){ %>
+                    <li class="<%= typeof page !== 'undefined' && page === 'login'?'active' : '' %>"><a href="/login">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i>  Login</a></li>
+                    <li class="<%= typeof page !== 'undefined' && page === 'register'?'active' : '' %>"><a href="/register">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> Sign Up</a></li>
+            
+
+                        <% } else { %>
+                        <li class="<%= typeof page !== 'undefined' && page === 'user'?'active' : '' %>  dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-user fa-fw"></span>
+                                <strong><%=currentUser.username.capitalize()%></strong>
+                                <span class="glyphicon glyphicon-chevron-down fa-fw"></span>
+                            </a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li>
+                                    <div class="navbar-login">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <p class="text-center">
+                                                    <span>
+                                                        <img src = "<%=currentUser.avatar%>" 
+                                                             onError="this.onerror=null; this.src='http://www.carderator.com/assets/avatar_placeholder_small.png'"
+                                                             height = "80" width = "80">
+                                                    </span>
+                                                </p>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <p class="text-left"><strong><%=currentUser.username.capitalize()%></strong></p>
+                                                <p class="text-left small"><%=currentUser.email%></p>
+                                                <p class="text-left">
+                                                    <a href="/users/<%= currentUser.id %>" class="btn btn-profile btn-block btn-sm">Profile</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a class="hov" href="/forgot">Change Password <span class="glyphicon glyphicon-lock pull-right"></span></a></li>
+                                <li><a class="hov"  href="/logout">Logout <span class="glyphicon glyphicon-log-out pull-right"></span></a></li>
+                            </ul>
+                        </li>
+                    <% } %>
+                    
                 </ul>
           </div>
       </div>
