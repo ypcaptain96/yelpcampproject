@@ -21,7 +21,6 @@ var commentRoutes     = require("./routes/comments"),
     
 mongoose.Promise = global.Promise;
 var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v10";
-var pwd = process.env.GMAILPW;
 mongoose.connect(url);
 
 

@@ -20,7 +20,9 @@
         <% campgrounds.forEach(function(campground){ %>
             <div class = "col-md-3 col-sm-6">
                 <div class = "thumbnail">
-                     <img id="indexImg" src="<%= campground.image %>" height="240" width="420">
+                     <img id="indexImg" src="<%= campground.image %>" alt="Sorry! Image not available at this time" 
+                          onError="this.onerror=null; this.src='https://dummyimage.com/hd1080/fcfcfc/000000&text=No+Image+';"
+                          height="240" width="420">
     
                     <div class="caption text-center">
                             <h3> <%= campground.name %> </h3>
