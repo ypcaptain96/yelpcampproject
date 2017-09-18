@@ -1,4 +1,5 @@
 var mongoose              = require("mongoose");
+var uniqueValidator       = require('mongoose-unique-validator');
 var passportLocalMongoose = require("passport-local-mongoose");
 
 var userSchema = new mongoose.Schema({
@@ -7,7 +8,7 @@ var userSchema = new mongoose.Schema({
    avatar: String,
    firstName: String,
    bio: String,
-   email: {type: String, unique: true, required: true},
+   email: {type: String, index: true, unique: true, required: true},
    resetPasswordToken: String,
    resetPasswordExpires: Date,
    isAdmin: {type: Boolean, default: false}
@@ -21,5 +22,6 @@ var options = {
 };
 
 userSchema.plugin(passportLocalMongoose, options);
+userSchema.plugin(uniqueValidator, { message: 'ERROR!, Expected {PATH} to be unique.' });
 
 module.exports = mongoose.model("User", userSchema);

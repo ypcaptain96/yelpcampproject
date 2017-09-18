@@ -2,6 +2,7 @@
 var express         = require("express");
 var bodyParser      = require("body-parser");
 var mongoose        = require("mongoose");
+var uniqueValidator = require('mongoose-unique-validator');
 var passport        = require("passport");
 var flash           = require("connect-flash");
 var moment          = require('moment-timezone');
