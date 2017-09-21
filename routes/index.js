@@ -57,14 +57,19 @@ router.get("/login", function(req, res) {
 // Handle login logic
 //  == app.post("/login", middleware, callback) ==
 
-router.post("/login", function (req, res, next) {
-    passport.authenticate("local",
-        {
-            successRedirect: "/campgrounds",
-            failureRedirect: "/login",
-            successFlash: "Welcome back, " + req.body.username + "!",
-            failureFlash: "Login failed, invalid credentials."
-        })(req, res);
+router.post('/login', function(req, res, next) {
+  passport.authenticate('local', function(err, user, info) {
+    if (err) { return next(err); }
+    if (!user) {  req.flash("error", "Login failed, invalid credentials.");
+                  return res.redirect('/login'); }
+    req.logIn(user, function(err) {
+      if (err) { return next(err); }
+      var redirectTo = req.session.redirectTo ? req.session.redirectTo : '/campgrounds';
+      delete req.session.redirectTo;
+      req.flash("success", "Welcome back, " + req.body.username + "!");
+      res.redirect(redirectTo);
+    });
+  })(req, res, next);
 });
 
 // Logout Logic Route

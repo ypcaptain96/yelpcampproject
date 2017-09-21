@@ -5,12 +5,14 @@ var User       = require("../models/user");
 // All the middleware goes here
 var middlewareObj = {};
 
+
 middlewareObj.isLoggedIn = function(req, res, next){
     if(req.isAuthenticated()){
         return next();
     }
-        req.flash("error", "You need to be logged in to do that!");
-        res.redirect("/login");
+    req.session.redirectTo = req.originalUrl;
+    req.flash("error", "You need to be logged in to do that");
+    res.redirect("/login");
 };
 
 
@@ -37,7 +39,7 @@ middlewareObj.checkCampgroundOwnership = function(req, res, next)
                    });
             } else {
                   // if not, redirect
-                  req.flash("error", "You need to be logged in do that!")
+                  req.flash("error", "You need to be logged in do that!");
                   res.redirect("back");
                    }
 };
