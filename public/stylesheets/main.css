@@ -11,8 +11,6 @@
 html {
   position: relative;
   min-height: 100%;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 
 a{
